@@ -18,13 +18,7 @@ function AddPostForm() {
   // if we have title and content, then dispatch action
   const onSavePostClick = () => {
     if (title && content) {
-      dispatch(
-        postAdded({
-          id: nanoid(),
-          title,
-          content,
-        })
-      );
+      dispatch(postAdded(title, content));
       setTitle("");
       setContent("");
     }
