@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postAdded } from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
 
-//? FORM TO ADD NEW CONTENT
+//, FORM TO ADD NEW CONTENT
 
 function AddPostForm() {
   const dispatch = useDispatch();
@@ -39,10 +39,10 @@ function AddPostForm() {
   ));
 
   return (
-    <section>
+    <section className="form">
       <h2>Add a New Post</h2>
       <form>
-        <label htmlFor="postTitle">Post Title:</label>
+        <label htmlFor="postTitle">Title:</label>
         <input
           type="text"
           id="postTitle"
@@ -51,7 +51,7 @@ function AddPostForm() {
           onChange={onTitleChange}
         />
 
-        <label htmlFor="postAuthor">Author</label>
+        <label htmlFor="postAuthor">Author:</label>
         <select id="postAuthor" value={userId} onChange={onAuthorChange}>
           <option value=""></option>
           {usersOptions}
@@ -65,9 +65,11 @@ function AddPostForm() {
           onChange={onContentChange}
         />
 
-        <button type="button" disabled={!canSave} onClick={onSavePostClick}>
-          Save Post
-        </button>
+        <div className="btn">
+          <button type="button" disabled={!canSave} onClick={onSavePostClick}>
+            Save Post
+          </button>
+        </div>
       </form>
     </section>
   );
