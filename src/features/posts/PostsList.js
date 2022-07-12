@@ -14,9 +14,9 @@ function PostsList() {
 
   // maping over posts
   const renderedPosts = orderedPosts.map((post) => (
-    <article key={post.id}>
-      <h3>{post.title}</h3>
-      <p>{post.content.substring(0, 200)}</p>
+    <article className="article" key={post.id}>
+      <h3 className="postTitle">{post.title}</h3>
+      <p className="postContent">{post.content.substring(0, 200)}</p>
       <p className="postCredit">
         <PostAuthor userId={post.user} />
         <TimeAgo timestamp={post.date} />
